@@ -28,6 +28,18 @@ int main() {
 
     glfwMakeContextCurrent(pWindow);
 
+    if (glewInit() != GLEW_OK) {
+        std::cerr << "GLEW initialization failed" << std::endl;
+        return -1;
+    }
+    
+    // Main loop
+    while (!glfwWindowShouldClose(pWindow)) {
+        glfwPollEvents();
+
+        glfwSwapBuffers(pWindow);
+    }
+
     glfwTerminate();
     return 0;
 }
