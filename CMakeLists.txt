@@ -11,3 +11,4 @@ include_directories(${GLEW_INCLUDE_DIRS} ${GLFW_INCLUDE_DIRS})
 link_directories(${GLEW_LIBRARIES_DIRS} ${GLFW_LIBRARIES_DIRS})
 
 add_subdirectory(Chapter01)
+add_subdirectory(Chapter02)
