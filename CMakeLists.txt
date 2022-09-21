@@ -10,4 +10,4 @@ set(GLFW_LIBRARIES_DIRS "./common/glfw-3.3.8/lib-vc2019/")
 include_directories(${GLEW_INCLUDE_DIRS} ${GLFW_INCLUDE_DIRS})
 link_directories(${GLEW_LIBRARIES_DIRS} ${GLFW_LIBRARIES_DIRS})
 
-add_subdirectory(Chapter01/GLFW)
+add_subdirectory(Chapter01)
