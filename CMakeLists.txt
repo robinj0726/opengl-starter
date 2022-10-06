@@ -8,7 +8,7 @@ set(GLFW_INCLUDE_DIRS "./common/glfw-3.3.8/include")
 set(GLFW_LIBRARIES_DIRS "./common/glfw-3.3.8/lib-vc2017/")
 
 set(SOIL2_INCLUDE_DIRS "./common/soil2/include")
-set(SOIL2_LIBRARIES_DIRS "./common/soil2/lib/")
+set(SOIL2_LIBRARIES_DIRS "./common/soil2/lib/x64")
 
 include_directories(${GLEW_INCLUDE_DIRS} ${GLFW_INCLUDE_DIRS} ${SOIL2_INCLUDE_DIRS})
 link_directories(${GLEW_LIBRARIES_DIRS} ${GLFW_LIBRARIES_DIRS} ${SOIL2_LIBRARIES_DIRS})
