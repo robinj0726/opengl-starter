@@ -24,7 +24,7 @@ const GLchar* vertexShaderSource = "#version 330 core\n"
 "uniform mat4 transform;\n"
 "void main()\n"
 "{\n"
-"    gl_Position = transform * vec4(position, 1.0f);\n"
+"    gl_Position = vec4(position, 1.0f);\n"
 "    ourColor = color;\n"
 "    TexCoord = vec2(texCoord.x, 1.0 - texCoord.y);\n"
 "}\0";
@@ -37,7 +37,7 @@ const GLchar* fragmentShaderSource = "#version 330 core\n"
 "void main()\n"
 "{\n"
 "   color = texture(ourTexture1, TexCoord);\n"
-"}\0";
+"}\n\0";
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -214,14 +214,14 @@ int main( )
         // Draw the triangle
         glUseProgram( shaderProgram );
         
-        // Create transformations
-        glm::mat4 transform;
-        transform = glm::translate( transform, glm::vec3( 0.5f, -0.5f, 0.0f ) );
-        transform = glm::rotate( transform, ( GLfloat)glfwGetTime( ) * -5.0f, glm::vec3( 0.0f, 0.0f, 1.0f ) );
+        // // Create transformations
+        // glm::mat4 transform;
+        // transform = glm::translate( transform, glm::vec3( 0.5f, -0.5f, 0.0f ) );
+        // transform = glm::rotate( transform, ( GLfloat)glfwGetTime( ) * -5.0f, glm::vec3( 0.0f, 0.0f, 1.0f ) );
         
-        // Get matrix's uniform location and set matrix
-        GLint transformLocation = glGetUniformLocation( shaderProgram, "transform" );
-        glUniformMatrix4fv( transformLocation, 1, GL_FALSE, glm::value_ptr( transform ) );
+        // // Get matrix's uniform location and set matrix
+        // GLint transformLocation = glGetUniformLocation( shaderProgram, "transform" );
+        // glUniformMatrix4fv( transformLocation, 1, GL_FALSE, glm::value_ptr( transform ) );
         
         glActiveTexture( GL_TEXTURE0 );
         glBindTexture( GL_TEXTURE_2D, texture );
